@@ -1,70 +1,101 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="card">
-            <div class="search">
-                <input type="text" placeholder="Enter city name" spellcheck="False">
-                <button><img src="https://github.com/xenoz098/weather/blob/main/search.png?raw=true"/></button>
-            </div>
-            <div class="weather">
-                <img src="https://github.com/xenoz098/weather/blob/main/clear.png?raw=true" class="weather-icon">
-                <h1 class="temp">22°C</h1>
-                <h2 class="city">MYSURU</h2>
-                <div class="details">
-                    <div class="col">
-                        <img src="https://github.com/xenoz098/weather/blob/main/humidity.png?raw=true">
-                        <div>
-                            <p class="humidity">50%</p>
-                            <p>humidity</p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <img src="https://github.com/xenoz098/weather/blob/main/wind.png?raw=true">
-                        <div>
-                            <p class="wind">15 km/hr</p>
-                            <p>Wind Speed</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Weather Web</title>
+    <link rel="stylesheet" href="prince_sapkota_css_2408837.css" />
+  </head>
+  <body>
+    
+    <div class="total">
+      <div class="card">
+        <div class="search">
+          <input type="text" placeholder="Enter city name" spellcheck="False" />
+          <button>
+            <img
+              src="https://github.com/xenoz098/weather/blob/main/search.png?raw=true"
+            />
+          </button>
         </div>
-        <script>
-            const apiKey ="9cf439b778e27ab987df28a6bfc130a0";
-            const apiUrl ="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+        
+        <div class="weather">
+          <div class="description">
+            <p>cloudy</p>
+          </div>
+          <img
+            src="https://github.com/xenoz098/weather/blob/main/clear.png?raw=true"
+            class="weather-icon"
+          />
+          <h1 class="temp">invalid</h1>
+          <h2 class="city">Enter a valid city</h2>
+          <div class="details">
+            <div class="col">
+              <img
+                src="https://github.com/xenoz098/weather/blob/main/humidity.png?raw=true"
+              />
+              <div>
+                <p class="humidity">invalid</p>
+                <p>humidity</p>
+              </div>
+            </div>
+            <div class="col">
+              <img
+                src="https://github.com/xenoz098/weather/blob/main/wind.png?raw=true"
+              />
+              <div>
+                <p class="wind">invalid</p>
+                <p>Wind Speed</p>
+              </div>
+            </div>
+          </div>
+          <div class="date">
+            <p class="date">invalid</p>
+          </div>
+        </div>
+      </div>
 
-            const searchBox = document.querySelector(".search input");
-            const searchBtn = document.querySelector(".search button");
+      
+      <div class="past-days">
+        <!-- Dummy data for the past 7 days will be displayed here -->
+        <div class="past-day-card">
+          <p class="date1">Date 1</p>
+          <p class="temp1">Temperature: 25°C</p>
+          <!-- Add more data as needed -->
+        </div>
+        <div class="past-day-card">
+          <p class="date2">Date 2</p>
+          <p class="temp2">Temperature: 26°C</p>
+          <!-- Add more data as needed -->
+        </div>
+        <div class="past-day-card">
+          <p class="date3">Date 3</p>
+          <p class="temp3">Temperature: 24°C</p>
+          <!-- Add more data as needed -->
+        </div>
+        <div class="past-day-card">
+          <p class="date4">Date 4</p>
+          <p class="temp4">Temperature: 27°C</p>
+          <!-- Add more data as needed -->
+        </div>
+        <div class="past-day-card">
+          <p class="date5">Date 5</p>
+          <p class="temp5">Temperature: 23°C</p>
+          <!-- Add more data as needed -->
+        </div>
+        <div class="past-day-card">
+          <p class="date6">Date 6</p>
+          <p class="temp6">Temperature: 22°C</p>
+          <!-- Add more data as needed -->
+        </div>
+        <div class="past-day-card">
+          <p class="date7">Date 7</p>
+          <p class="temp7">Temperature: 28°C</p>
+          <!-- Add more data as needed -->
+        </div>
+      </div>
+    </div>
 
-
-            async function checkWeather(city){
-                const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
-                var data = await response.json();
-
-
-
-                console.log(data);
-            
-            document.querySelector(".city").innerHTML = data.name;
-            document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
-            document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-            document.querySelector(".wind").innerHTML = data.wind.speed + "km/hr";
-
-            
-
-
-
-            // changing the image based on weather condition
-            
-            }
-
-            searchBtn.addEventListener("click",()=>{
-                checkWeather(searchBox.value);
-            })
-
-            checkWeather();
-            
-        </script>
-    </body>
+    <!-- <script src="script.js"></script> -->
+    <script src="prince_sapkota_js_2408837.js"></script>
+    <footer class="footer">(All rights reserved)</footer>
+  </body>
 </html>
